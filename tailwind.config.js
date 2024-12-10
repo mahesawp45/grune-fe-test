@@ -8,6 +8,7 @@ module.exports = {
       },
       colors: {
         navbar: "#406a80",
+        primary: "#67a9cc",
       },
     },
   },
