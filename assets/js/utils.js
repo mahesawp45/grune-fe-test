@@ -5,6 +5,7 @@ function toggleToTop() {
   });
 }
 
+// this sets are for the navigation
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const closeBtn = document.getElementById("close-btn");
