@@ -7,30 +7,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="Keywords" content="Cars">
         <meta name="Description" content="Tasting the cars">
-        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="/assets/css/cssreset-min.css" />
         <link rel="stylesheet" href="/assets/css/style.css">
 
         <script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="/assets/js/menu.js"></script>
 
-        <!-- this script for initialize the tailwind css -->
+        <!-- this link is for initialize the tailwind css -->
         <link href="./output.css" rel="stylesheet">
 
-        <!-- this script for initialize the swiper js -->
+        <!-- this link and script are for initialize the swiper js -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </head>
 
-    <body class="relative">
-        <!-- Desktop's Navbar -->
-        <header class="bg-navbar text-white sticky top-0 z-50">
+    <body class="relative overflow-x-hidden">
+        <header id="header" class="bg-navbar text-white sticky top-0 z-50">
+            <!-- Desktop's Navbar -->
             <div class="container mx-auto flex justify-between items-center py-4 px-6">
                 <a href="/">
                     <img src="/assets/img/logo/tc-white-logo.svg" alt="toast car" class="h-20 w-32 object-scale-down">
                 </a>
-                <div>
+                <div class="md:hidden">
+                    <button id="hamburger-btn" class="focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden md:block">
                     <div class="w-full flex flex-row justify-end mb-4">
                         <button
                             class="border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-900 flex items-center justify-center space-x-2">
@@ -42,7 +50,7 @@
                             </svg>
                         </button>
                     </div>
-                    <nav>
+                    <nav aria-label="desktop navigation">
                         <ul class="flex space-x-4">
                             <li><a href="#" class="hover:underline">HOME</a></li>
                             <li><a href="#" class="hover:underline">検索</a></li>
@@ -53,31 +61,62 @@
                     </nav>
                 </div>
             </div>
+
+            <!-- Mobile's Navbar -->
+            <div id="mobile-menu"
+                class="fixed top-0 left-0 w-full h-full bg-navbar p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                <div class="flex justify-end mb-6">
+                    <button id="close-btn" class="focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <nav aria-label="mobile navigation">
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:underline">HOME</a></li>
+                        <li><a href="#" class="hover:underline">検索</a></li>
+                        <li><a href="#" class="hover:underline">お気に入り</a></li>
+                        <li><a href="#" class="hover:underline">お知らせ</a></li>
+                        <li><a href="#" class="hover:underline">サービスについて</a></li>
+                        <li>
+                            <button
+                                class="border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-900 flex items-center justify-center space-x-2">
+                                <span>お気に入り一覧</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-
-
 
         <!-- Hero Section -->
         <div class="swiper swiper-top-cars lg:h-82">
             <div class="swiper-wrapper" id="swiper-wrapper-id">
+                <!-- Top/hero cars are here -->
             </div>
-            <!-- the dots indicator -->
             <div class="swiper-pagination"></div>
         </div>
 
-
         <!-- Recommended Section -->
         <section class="mx-auto my-8 w-full">
-            <div class="w-full flex flex-col space-y-2 my-12">
-                <h2 class="text-2xl font-bold text-center">オススメの新型車(仮)</h2>
-                <p class="text-gray-600 text-center">説明文が入ります。ダミーテキストダミーテキスト</p>
+            <div class="w-full flex flex-col space-y-1 my-12">
+                <h2 class="text-3xl font-bold text-center mb-2">オススメの新型車(仮)</h2>
+                <p class="text-gray-500 text-center">説明文が入ります。ダミーテキストダミーテキスト</p>
+                <p class="text-gray-500 text-center">ダミーテキストダミーテキストダミーテキスト</p>
             </div>
 
-            <div class="swiper swiper-recommended-cars overflow-hidden h-80 flex items-center relative">
-                <!-- Wrapper -->
+            <div class="swiper swiper-recommended-cars overflow-hidden h-76 flex items-center relative">
                 <div class="swiper-wrapper relative px-6 w-screen" id="recommended-cars">
+                    <!-- recommeded cars are here -->
                 </div>
-                <!-- Navigation buttons -->
                 <div class="swiper-button-prev swiper-button-prev-recommended-cars absolute -left-20 z-20"></div>
                 <div class="swiper-button-next swiper-button-next-recommended-cars"></div>
             </div>
@@ -85,20 +124,20 @@
         </section>
 
         <!-- Search Section -->
-        <section class="w-full grid grid-rows-1 grid-cols-1 md:grid-cols-2 gap-x-6 px-6 py-8">
+        <section class="w-full grid grid-rows-1 grid-cols-1 md:grid-cols-2 gap-x-6 px-6 py-8 mt-20">
             <!-- Left Column -->
-            <div class="mx-auto px-6 py-8 w-full rounded-md shadow-md bg-gray-200">
+            <div class="mx-auto px-6 py-8 w-full shadow-md bg-gray-100">
                 <!-- Filter by Vehicle Type -->
                 <div class="mb-8">
                     <h3 class="font-bold text-2xl text-gray-600 mb-4">車種から探す</h3>
                     <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4" id="catalogue-cars">
-                        <!-- catalogue items are here -->
+                        <!-- catalogue cars are here -->
                     </div>
                 </div>
 
                 <!-- Option Search -->
                 <div class="py-6">
-                    <div class="mb-4 border-2 px-2 border-l-navbar">
+                    <div class="mb-4 border-l-2 px-2 border-l-navbar">
                         <p class="font-bold text-xl">
                             オプション検索
                         </p>
@@ -111,7 +150,7 @@
                                 class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">メーカー</label>
                             <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
                                 <select
-                                    class="block w-full appearance-none border border-gray-300 rounded-md py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    class="block w-full appearance-none border border-gray-300 py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                     <option>日産</option>
                                     <option>トヨタ</option>
                                 </select>
@@ -128,7 +167,7 @@
                                 class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">排気量</label>
                             <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
                                 <select
-                                    class="block w-full appearance-none border border-gray-300 rounded-md py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    class="block w-full appearance-none border border-gray-300 py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                     <option>日産</option>
                                     <option>トヨタ</option>
                                 </select>
@@ -141,7 +180,7 @@
 
 
                     <!-- Transmission Options -->
-                    <div class="mt-4 flex flex-row space-x-4">
+                    <div class="mt-4 flex flex-row space-x-4 items-center">
                         <h4 class="font-bold text-sm mb-2">AT/MT</h4>
                         <div
                             class="inline-flex items-center bg-white border border-gray-300 rounded-full overflow-hidden shadow-sm">
@@ -177,114 +216,131 @@
             </div>
 
             <!-- Right Column -->
-            <div class="mx-auto px-6 py-8 w-full rounded-md shadow-md bg-gray-200">
-                <div class="mb-8">
-                    <h3 class="font-bold text-2xl text-gray-600 mb-4">車種から探す</h3>
-                </div>
-                <div
-                    class="flex flex-col sm:flex-row sm:space-x-4 lg:space-x-6 items-center sm:space-y-4 lg:space-y-0 justify-center">
-                    <!-- Maker Dropdown -->
-                    <div class="flex flex-col sm:flex-row items-center sm:space-x-2 sm:w-auto">
-                        <label for="maker"
-                            class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">メーカー</label>
-                        <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
-                            <select
-                                class="block w-full appearance-none border border-gray-300 rounded-md py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                <option>日産</option>
-                                <option>トヨタ</option>
-                            </select>
-                            <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6">
-                            </div>
+            <div class="w-full flex flex-col space-y-6 h-full">
+                <div class="mx-auto py-8 w-full shadow-md bg-white">
+                    <div class="px-6">
+                        <div class="mb-8 ">
+                            <h3 class="font-medium text-3xl text-gray-500 mb-4">車種から探す</h3>
                         </div>
+                        <div
+                            class="flex flex-col sm:flex-row sm:space-x-4 lg:space-x-6 items-center sm:space-y-4 lg:space-y-0 justify-center">
+                            <!-- Maker Dropdown -->
+                            <div class="flex flex-col sm:flex-row items-center sm:space-x-2 sm:w-auto w-full">
+                                <label for="maker"
+                                    class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">メーカー</label>
+                                <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
+                                    <select
+                                        class="block w-full appearance-none border border-gray-300 py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                        <option>日産</option>
+                                        <option>トヨタ</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6">
+                                    </div>
+                                </div>
 
-                    </div>
-
-                    <!-- Displacement Dropdown -->
-                    <div class="flex flex-col sm:flex-row items-center sm:space-x-2 sm:w-auto">
-                        <label for="displacement"
-                            class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">排気量</label>
-                        <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
-                            <select
-                                class="block w-full appearance-none border border-gray-300 rounded-md py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                <option>日産</option>
-                                <option>トヨタ</option>
-                            </select>
-                            <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6">
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Option Search -->
-                <div class="py-6">
-                    <div class="mb-4 border-2 px-2 border-l-navbar">
-                        <p class="font-bold text-xl">
-                            オプション検索
-                        </p>
-                    </div>
-                    <div
-                        class="flex flex-col sm:flex-row sm:space-x-4 lg:space-x-6 items-center sm:space-y-4 lg:space-y-0">
-                        <!-- Maker Dropdown -->
-                        <div class="flex flex-col sm:flex-row items-center sm:space-x-2 w-full sm:w-auto">
-                            <label for="maker"
-                                class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">メーカー</label>
-                            <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
-                                <select
-                                    class="block w-full appearance-none border border-gray-300 rounded-md py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                    <option>日産</option>
-                                    <option>トヨタ</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                    <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6">
+                            <!-- Displacement Dropdown -->
+                            <div class="flex flex-col sm:flex-row items-center sm:space-x-2 sm:w-auto w-full">
+                                <label for="displacement"
+                                    class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">排気量</label>
+                                <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
+                                    <select
+                                        class="block w-full appearance-none border border-gray-300 py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                        <option>日産</option>
+                                        <option>トヨタ</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6">
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
+                    </div>
 
+                    <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-6 w-full bg-gray-100 p-6"
+                        id="catalogue-cars-right">
+                        <!-- catalogue cars right side -->
+                    </div>
+
+
+                    <div class="py-6 px-6">
+                        <div class="mb-4 border-l-2 px-2 border-l-navbar">
+                            <p class="font-bold text-xl">
+                                オプション検索
+                            </p>
+                        </div>
                         <!-- Displacement Dropdown -->
                         <div class="flex flex-col sm:flex-row items-center sm:space-x-2 w-full sm:w-auto">
                             <label for="displacement"
-                                class="block text-sm font-bold text-gray-700 w-20 text-center sm:text-left">排気量</label>
+                                class="block text-sm font-bold w-20 text-center sm:text-left text-gray-500">排気量</label>
                             <div class="relative w-40 lg:w-40 max-sm:w-full sm:w-full max-w-xs">
                                 <select
-                                    class="block w-full appearance-none border border-gray-300 rounded-md py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    class="block w-full appearance-none border border-gray-300 py-1 px-4 pr-8 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    disabled>
                                     <option>日産</option>
                                     <option>トヨタ</option>
                                 </select>
                                 <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                    <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6">
+                                    <img src="/assets/img/icon/arrowDown.png" alt="" class="h-6 w-6 grayscale">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <!-- Transmission Options -->
-                    <div class="mt-4 flex flex-row space-x-4">
-                        <h4 class="font-bold text-sm mb-2">AT/MT</h4>
-                        <div
-                            class="inline-flex items-center bg-white border border-gray-300 rounded-full overflow-hidden shadow-sm">
+                        <!-- Transmission Options -->
+                        <div class="mt-4 flex flex-row space-x-4 items-center">
+                            <h4 class="font-bold text-sm mb-2 text-gray-500">AT/MT</h4>
+                            <div
+                                class="inline-flex items-center bg-white border border-gray-300 rounded-full overflow-hidden shadow-sm">
+                                <button
+                                    class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-full hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary w-20 disabled:bg-gray-400"
+                                    id="at-button" disabled>
+                                    AT
+                                </button>
+                                <button
+                                    class="px-4 py-2 text-sm font-bold text-gray-700 bg-white rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary disabled:text-gray-500"
+                                    id="mt-button" disabled>
+                                    MT
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="w-full flex justify-center">
                             <button
-                                class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-full hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary w-20"
-                                id="at-button">
-                                AT
-                            </button>
-                            <button
-                                class="px-4 py-2 text-sm font-bold text-gray-700 bg-white rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
-                                id="mt-button">
-                                MT
+                                class=" bg-primary text-white py-2 px-4 mt-4 rounded-sm hover:bg-primary flex items-center">
+                                <p class="text-lg">
+                                    この条件で探す
+                                </p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+
                             </button>
                         </div>
+                    </div>
+                </div>
+
+                <div class="mx-auto px-6 py-8 w-full  shadow-md bg-white">
+                    <!-- Title -->
+                    <h3 class="text-4xl font-medium text-gray-500 mb-4">フリーワード検索</h3>
+
+                    <!-- Input Field -->
+                    <div class="mb-4 px-20">
+                        <input type="text"
+                            class="w-full border border-gray-300 px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                     </div>
 
                     <!-- Search Button -->
                     <div class="w-full flex justify-center">
                         <button
-                            class=" bg-primary text-white py-2 px-4 mt-4 rounded-sm hover:bg-primary flex items-center">
-                            <p class="text-lg">
-                                この条件で探す
+                            class=" bg-primary w-40 text-white py-2 px-4 mt-4 rounded-sm hover:bg-primary flex items-center">
+                            <p class="text-lg text-center w-full">
+                                検索
                             </p>
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -294,184 +350,101 @@
 
                         </button>
                     </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="w-full mt-10 mb-20">
+            <div class="w-full max-w-3xl mx-auto p-4">
+                <!-- Header Notification Section -->
+                <div class="flex justify-between items-center border-b-4 border-b-navbar pb-2 mb-2">
+                    <h2 class="text-2xl font-bold text-gray-700">お知らせ</h2>
+                    <button class="bg-primary text-white py-2 px-8 text-lg hover:bg-navbar">一覧はこちら</button>
+                </div>
+
+                <!-- Notification Items -->
+                <div class="space-y-4" id="notifications">
+                    <!-- Notifications are here -->
                 </div>
             </div>
         </section>
 
 
         <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-6 mt-10">
-            <div class="container mx-auto text-center">
-                <p class="text-sm">Copyright © 2024</p>
-            </div>
-        </footer>
+        <footer class="text-black flex flex-col space-y-6 relative">
+            <!-- Main Section -->
+            <div class="bg-footer text-black flex items-center py-8 w-full justify-center">
+                <!-- Left * keep this div to make the footer symetric -->
+                <div class="w-52">
+                </div>
 
-        <script>
-            // rendering the carousel or hero section
-            let swiperWrapper = document.getElementById('swiper-wrapper-id');
-            // store the assets
-            const carouselImages = [
-                '/assets/img/catalog/slideshow/top/car1.jpg',
-                '/assets/img/catalog/slideshow/top/car2.jpg',
-                '/assets/img/catalog/slideshow/top/car3.jpg',
-                '/assets/img/catalog/slideshow/top/car4.jpg',
-                '/assets/img/catalog/slideshow/top/car5.jpg',
-                '/assets/img/catalog/slideshow/top/car6.jpg',
-                '/assets/img/catalog/slideshow/top/car7.jpg',
-                '/assets/img/catalog/slideshow/top/car8.jpg',
-            ];
-            // mapping the assets and create the slides
-            carouselImages.forEach((image, index) => {
-                const slideElement = document.createElement('div');
-                slideElement.className = 'swiper-slide h-full';
-                slideElement.id = `carousel-${index}`;
-                slideElement.innerHTML = `
-                 <span class="text-xl font-bold h-full flex items-center justify-center">
-                        <img src="${image}" class="h-full w-full object-cover">
-                    </span>
-            `;
-                swiperWrapper.appendChild(slideElement);
-            });
-
-            // initialize Swiper after adding slides
-            const swiper = new Swiper('.swiper-top-cars', {
-                loop: true,
-                autoplay: {
-                    delay: 3000,
-                    pauseOnMouseEnter: true,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-
-
-            // rendering the recommended cars
-            const recommendedCarsWrapper = document.getElementById('recommended-cars');
-
-            class RecommendedCar {
-                constructor(name, imgUrl, isPinned) {
-                    this.name = name;
-                    this.imgUrl = imgUrl;
-                    this.isPinned = isPinned;
-                }
-
-            }
-            const cars = [
-                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car1.png", true),
-                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car2.png", false),
-                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car3.png", true),
-                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car4.png", false),
-                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car5.png", true),
-            ];
-
-
-            // mapping the assets and create the slides
-            cars.forEach((car, index) => {
-                const slideElement = document.createElement('div');
-                slideElement.className = 'swiper-slide swiper-car';
-                slideElement.setAttribute("style", "width: 300px;");
-                slideElement.id = `recommended-car-${index}`;
-                slideElement.innerHTML = `
-        <div class="h-72 bg-white shadow-md overflow-hidden">
-            <img src="${car.imgUrl}" alt="Toyota Alphard Hybrid" class="h-40 lg:w-full object-cover" />
-            <div class="p-4">
-                <div class="flex flex-row space-x-4">
-                    <p class="md:text-xl text-lg text-gray-700 font-bold mb-2">${car.name}</p>
-                    <div class="flex flex-row items-center justify-between text-sm text-gray-500 mb-4">
-                        <button class="flex items-center" type="button">
-                            <span>
-                                <span class="mr-1">お気に入り</span>
-                                <span>解除</span>
-                            </span>
-                            ${car.isPinned ?
-                        "<img src='/assets/img/icon/pinCheck.png' class='h-8 w-8 object-scale-down' alt=''>" :
-                        "<img src='/assets/img/icon/pin.png' class='h-8 w-8 object-scale-down' alt=''>"}
-                        </button>
+                <!-- Divider Section -->
+                <div class="grid grid-cols-3 items-center">
+                    <div class="flex flex-row justify-end">
+                        <div>
+                            <div>
+                                <a href="/">
+                                    <img src="/assets/img/logo/tc-black-logo.svg" alt="toast car"
+                                        class="h-20 w-32 object-scale-down" />
+                                </a>
+                            </div>
+                            <address class="not-italic text-sm leading-6">
+                                〒000-0000<br />
+                                ◯◯県◯◯市◯◯0-0-0<br />
+                                ◯◯ビル◯F
+                            </address>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="h-40 w-2 bg-navbar"></div>
+                    </div>
+                    <div class="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-12">
+                        <ul class="text-sm flex flex-col space-y-2 ">
+                            <li><a href="#" class="hover:text-blue-300 font-medium w-full">試乗車検索</a></li>
+                            <li><a href="#" class="hover:text-blue-300 font-medium w-full">お気に入り一覧</a></li>
+                            <li><a href="#" class="hover:text-blue-300 font-medium w-full">お知らせ</a></li>
+                        </ul>
+                        <ul class="text-sm flex flex-col space-y-2">
+                            <li><a href="#" class="hover:text-blue-300 font-medium w-full">サービスについて</a></li>
+                            <li><a href="#" class="hover:text-blue-300 font-medium w-full">プライバシーポリシー</a></li>
+                            <li><a href="#" class="hover:text-blue-300 font-medium w-full">利用規約</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="px-8">
-                    <button class="w-full flex items-center justify-center text-black text-sm py-2 hover:bg-blue-600 hover:text-white transition ring-1 ring-black">
-                        <span>詳細を見る</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+
+                <!-- Right * keep this div to make the footer symetric -->
+                <div class="w-52">
                 </div>
+
             </div>
-        </div>
-    `;
-                recommendedCarsWrapper.appendChild(slideElement);
-            });
 
-            const swiper2 = new Swiper('.swiper-recommended-cars', {
-                loop: true,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: '.swiper-button-next-recommended-cars',
-                    prevEl: '.swiper-button-prev-recommended-cars',
-                },
-                // Breakpoints for responsiveness
-                breakpoints: {
-                    480: {
-                        slidesPerView: 1, // Mobile
-                        spaceBetween: 20,
-                    },
-                    640: {
-                        slidesPerView: 2, // Tablet
-                        spaceBetween: 20,
-                    },
-                    1024: {
-                        slidesPerView: 4, // Desktop
-                        spaceBetween: 20,
-                    },
-                },
-            });
+            <!-- Bottom Section -->
+            <div class="bg-blue-200 text-center text-lg py-3">
+                Copyright
+            </div>
 
-            const catalogeCars = document.getElementById('catalogue-cars');
+            <div class="-top-24 z-50 absolute right-0 m-10 rounded-full hover:cursor-pointer" onclick="toggleToTop()">
+                <img src="/assets/img/icon/backToTop.png" alt="" class="h-14 w-14">
+            </div>
 
-            class CatalogueCar {
-                constructor(name, imgUrl) {
-                    this.name = name;
-                    this.imgUrl = imgUrl;
+        </footer>
 
-                }
+        <!-- render the hero section -->
+        <script src="/assets/js/hero.js"></script>
 
-            }
-            const catalogeCarsData = [
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car1.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car2.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car3.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car4.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car5.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car6.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car7.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car8.png"),
-                new CatalogueCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/content/car9.png"),
+        <!-- render the recommended section  -->
+        <script src="/assets/js/recomended-car.js"></script>
 
-            ];
-            // mapping the assets and create the slides
-            catalogeCarsData.forEach((car, index) => {
-                const slideElement = document.createElement('div');
-                slideElement.className = 'catalogue-car flex flex-col items-center space-y-2';
-                slideElement.id = `catalogue-${index}`;
-                slideElement.innerHTML = `
-                            <img src="${car.imgUrl}" alt="軽自動車" class="w-full object-cover">
-                            <div class="flex justify-between w-full">
-                                <span class="text-sm">軽自動車</span>
-                                <input type="checkbox" class="form-checkbox h-6 w-6">
-                            </div>
-            `;
-                catalogeCars.appendChild(slideElement);
-            });
+        <!-- render the catalogue section  -->
+        <script src="/assets/js/catalogue-car.js"></script>
 
+        <!-- render the notification section  -->
+        <script src="/assets/js/notification.js"></script>
 
-
-
-
-
-        </script>
+        <!-- render all utils function -->
+        <script src="/assets/js/utils.js"></script>
     </body>
 
 </html>

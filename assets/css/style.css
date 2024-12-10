@@ -15,6 +15,7 @@
   opacity: 1;
 }
 
+/* Customize the left navigation button */
 .swiper .swiper-button-prev::after {
   background: url("/assets/img/icon/arrowLeftSlide.png") no-repeat center center;
   background-size: contain;
@@ -24,6 +25,8 @@
   height: 60px;
   font-weight: bolder;
 }
+
+/* Customize the right navigation button */
 .swiper .swiper-button-next::after {
   background: url("/assets/img/icon/arrowRightSlide.png") no-repeat center
     center;
