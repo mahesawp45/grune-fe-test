@@ -67,18 +67,18 @@
 
 
         <!-- Recommended Section -->
-        <section class="mx-auto my-8 px-6 w-full">
+        <section class="mx-auto my-8 w-full">
             <div class="w-full flex flex-col space-y-2 my-12">
                 <h2 class="text-2xl font-bold text-center">オススメの新型車(仮)</h2>
                 <p class="text-gray-600 text-center">説明文が入ります。ダミーテキストダミーテキスト</p>
             </div>
 
-            <div class="swiper swiper-recommended-cars overflow-hidden h-80 flex items-center">
+            <div class="swiper swiper-recommended-cars overflow-hidden h-80 flex items-center relative">
                 <!-- Wrapper -->
-                <div class="swiper-wrapper" id="recommended-cars">
+                <div class="swiper-wrapper relative px-6 w-screen" id="recommended-cars">
                 </div>
                 <!-- Navigation buttons -->
-                <div class="swiper-button-prev swiper-button-prev-recommended-cars"></div>
+                <div class="swiper-button-prev swiper-button-prev-recommended-cars absolute -left-20 z-20"></div>
                 <div class="swiper-button-next swiper-button-next-recommended-cars"></div>
             </div>
 
@@ -192,14 +192,15 @@
             // mapping the assets and create the slides
             cars.forEach((car, index) => {
                 const slideElement = document.createElement('div');
-                slideElement.className = 'swiper-slide'; // Swiper slide class
+                slideElement.className = 'swiper-slide swiper-car';
+                slideElement.setAttribute("style", "width: 300px;");
                 slideElement.id = `recommended-car-${index}`;
                 slideElement.innerHTML = `
         <div class="h-72 bg-white shadow-md overflow-hidden">
-            <img src="${car.imgUrl}" alt="Toyota Alphard Hybrid" class="h-40 w-full object-cover" />
+            <img src="${car.imgUrl}" alt="Toyota Alphard Hybrid" class="h-40 lg:w-full object-cover" />
             <div class="p-4">
                 <div class="flex flex-row space-x-4">
-                    <p class="text-xl text-gray-700 font-bold mb-2">${car.name}</p>
+                    <p class="md:text-xl text-lg text-gray-700 font-bold mb-2">${car.name}</p>
                     <div class="flex flex-row items-center justify-between text-sm text-gray-500 mb-4">
                         <button class="flex items-center" type="button">
                             <span>
@@ -242,11 +243,25 @@
 
             const swiper2 = new Swiper('.swiper-recommended-cars', {
                 loop: true,
-                slidesPerView: 4,
                 spaceBetween: 20,
                 navigation: {
                     nextEl: '.swiper-button-next-recommended-cars',
                     prevEl: '.swiper-button-prev-recommended-cars',
+                },
+                // Breakpoints for responsiveness
+                breakpoints: {
+                    480: {
+                        slidesPerView: 1, // Mobile
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2, // Tablet
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 4, // Desktop
+                        spaceBetween: 20,
+                    },
                 },
             });
 
