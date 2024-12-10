@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <title>Tasting Cars</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Keywords" content="Cars">
+        <meta name="Description" content="Tasting the cars">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/assets/css/cssreset-min.css" />
+        <link rel="stylesheet" href="/assets/css/style.css">
+
+        <script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/assets/js/menu.js"></script>
+
+        <!-- this script for initialize the tailwind css -->
+        <link href="./output.css" rel="stylesheet">
+
+        <!-- this script for initialize the swiper js -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </head>
+
+    <body class="relative">
+        <!-- Desktop's Navbar -->
+        <header class="bg-navbar text-white sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center py-4 px-6">
+                <a href="/">
+                    <img src="/assets/img/logo/tc-white-logo.svg" alt="toast car" class="h-20 w-32 object-scale-down">
+                </a>
+                <div>
+                    <div class="w-full flex flex-row justify-end mb-4">
+                        <button
+                            class="border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-900 flex items-center justify-center space-x-2">
+                            <span>お気に入り一覧</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <nav>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="hover:underline">HOME</a></li>
+                            <li><a href="#" class="hover:underline">検索</a></li>
+                            <li><a href="#" class="hover:underline">お気に入り</a></li>
+                            <li><a href="#" class="hover:underline">お知らせ</a></li>
+                            <li><a href="#" class="hover:underline">サービスについて</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Hero Section -->
+        <div class="swiper swiper-top-cars lg:h-82">
+            <div class="swiper-wrapper" id="swiper-wrapper-id">
+            </div>
+            <!-- the dots indicator -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+        <!-- Recommended Section -->
+        <section class="mx-auto my-8 px-6 w-full">
+            <div class="w-full flex flex-col space-y-2 my-12">
+                <h2 class="text-2xl font-bold text-center">オススメの新型車(仮)</h2>
+                <p class="text-gray-600 text-center">説明文が入ります。ダミーテキストダミーテキスト</p>
+            </div>
+
+            <div class="swiper swiper-recommended-cars overflow-hidden h-80 flex items-center">
+                <!-- Wrapper -->
+                <div class="swiper-wrapper" id="recommended-cars">
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev swiper-button-prev-recommended-cars"></div>
+                <div class="swiper-button-next swiper-button-next-recommended-cars"></div>
+            </div>
+
+        </section>
+
+        <!-- Search Section -->
+        <section class="container mx-auto px-6 my-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Filter by Vehicle Type -->
+                <div class="bg-white shadow-md p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-4">車種から探す</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>軽自動車</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>コンパクトカー</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>ミニバン</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>セダン</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>クーペ</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>ステーションワゴン</span>
+                        </label>
+                    </div>
+                    <button class="bg-blue-600 text-white py-2 px-4 mt-4 rounded-md hover:bg-blue-700">この条件で探す</button>
+                </div>
+                <!-- Filter by Maker -->
+                <div class="bg-white shadow-md p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-4">メーカーから探す</h3>
+                    <select class="block w-full border-gray-300 rounded-md mb-4">
+                        <option>日産</option>
+                        <option>トヨタ</option>
+                    </select>
+                    <div class="grid grid-cols-3 gap-4">
+                        <img src="/assets/img/catalog/content/car5.png" alt="Maker 1">
+                        <img src="/assets/img/catalog/content/car6.png" alt="Maker 2">
+                        <img src="/assets/img/catalog/content/car7.png" alt="Maker 3">
+                    </div>
+                    <button class="bg-blue-600 text-white py-2 px-4 mt-4 rounded-md hover:bg-blue-700">この条件で探す</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto text-center">
+                <p class="text-sm">Copyright © 2024</p>
+            </div>
+        </footer>
+
+        <script>
+            // rendering the carousel or hero section
+            let swiperWrapper = document.getElementById('swiper-wrapper-id');
+            // store the assets
+            const carouselImages = [
+                '/assets/img/catalog/slideshow/top/car1.jpg',
+                '/assets/img/catalog/slideshow/top/car2.jpg',
+                '/assets/img/catalog/slideshow/top/car3.jpg',
+                '/assets/img/catalog/slideshow/top/car4.jpg',
+                '/assets/img/catalog/slideshow/top/car5.jpg',
+                '/assets/img/catalog/slideshow/top/car6.jpg',
+                '/assets/img/catalog/slideshow/top/car7.jpg',
+                '/assets/img/catalog/slideshow/top/car8.jpg',
+            ];
+            // mapping the assets and create the slides
+            carouselImages.forEach((image, index) => {
+                const slideElement = document.createElement('div');
+                slideElement.className = 'swiper-slide h-full';
+                slideElement.id = `carousel-${index}`;
+                slideElement.innerHTML = `
+                 <span class="text-xl font-bold h-full flex items-center justify-center">
+                        <img src="${image}" class="h-full w-full object-cover">
+                    </span>
+            `;
+                swiperWrapper.appendChild(slideElement);
+            });
+
+
+            // rendering the recommended cars
+            const recommendedCarsWrapper = document.getElementById('recommended-cars');
+            class RecommendedCar {
+                constructor(name, imgUrl, isPinned) {
+                    this.name = name;
+                    this.imgUrl = imgUrl;
+                    this.isPinned = isPinned;
+                }
+
+            }
+            const cars = [
+                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car1.png", true),
+                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car2.png", false),
+                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car3.png", true),
+                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car4.png", false),
+                new RecommendedCar("Lorem ipsum dolor sit amet", "/assets/img/catalog/slideshow/car5.png", true),
+            ];
+
+
+            // mapping the assets and create the slides
+            cars.forEach((car, index) => {
+                const slideElement = document.createElement('div');
+                slideElement.className = 'swiper-slide'; // Swiper slide class
+                slideElement.id = `recommended-car-${index}`;
+                slideElement.innerHTML = `
+        <div class="h-72 bg-white shadow-md overflow-hidden">
+            <img src="${car.imgUrl}" alt="Toyota Alphard Hybrid" class="h-40 w-full object-cover" />
+            <div class="p-4">
+                <div class="flex flex-row space-x-4">
+                    <p class="text-xl text-gray-700 font-bold mb-2">${car.name}</p>
+                    <div class="flex flex-row items-center justify-between text-sm text-gray-500 mb-4">
+                        <button class="flex items-center" type="button">
+                            <span>
+                                <span class="mr-1">お気に入り</span>
+                                <span>解除</span>
+                            </span>
+                            ${car.isPinned ?
+                        "<img src='/assets/img/icon/pinCheck.png' class='h-8 w-8 object-scale-down' alt=''>" :
+                        "<img src='/assets/img/icon/pin.png' class='h-8 w-8 object-scale-down' alt=''>"}
+                        </button>
+                    </div>
+                </div>
+                <div class="px-8">
+                    <button class="w-full flex items-center justify-center text-black text-sm py-2 hover:bg-blue-600 hover:text-white transition ring-1 ring-black">
+                        <span>詳細を見る</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+                recommendedCarsWrapper.appendChild(slideElement);
+            });
+
+
+            // initialize Swiper after adding slides
+            const swiper = new Swiper('.swiper-top-cars', {
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            const swiper2 = new Swiper('.swiper-recommended-cars', {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next-recommended-cars',
+                    prevEl: '.swiper-button-prev-recommended-cars',
+                },
+            });
+
+        </script>
+    </body>
+
+</html>

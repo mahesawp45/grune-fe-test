@@ -1,0 +1,47 @@
+/* bullet in the slideshow or carousel */
+.swiper .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #888;
+  opacity: 0.5;
+
+}
+
+/* Active bullet customization for the slideshow*/
+.swiper .swiper-pagination-bullet-active {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+/* Hide default Swiper buttons */
+/* .swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  display: none;
+} */
+
+/* Hide default navigation arrows */
+
+/* Custom styles for the "Prev" button */
+.swiper .swiper-button-prev::after {
+  background: url('/assets/img/icon/arrowLeftSlide.png') no-repeat center center;
+  background-size: contain;
+  /* Ensure the icon fits properly */
+  width: 40px;
+  /* Set custom size */
+  height: 40px;
+  /* Adjust position (optional) */
+}
+
+/* Custom styles for the "Next" button */
+.swiper .swiper-button-next::after {
+  background: url('/assets/img/icon/arrowRightSlide.png') no-repeat center center;
+  background-size: contain;
+  /* Ensure the icon fits properly */
+  width: 40px;
+  /* Set custom size */
+  height: 40px;
+  /* Adjust position (optional) */
+}
